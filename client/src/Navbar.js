@@ -159,7 +159,10 @@ const NavLinks = styled.div`
     font-size: 20px;
     @media (max-width: 768px) {
       font-size: 40px;
-    
+      &.active {
+
+    color: white !important; /* Change to the desired text color when active */
+  }
   }
   }
 `;

@@ -29,23 +29,54 @@ export const Services =()=>{
 }
 }
 
-const description = {
+const serviceDescription = {
     en:{
         residential: {
-            title1:"Residential Services",
+          image:`${bucket}`,
+            title:"Residential Services",
             description: "Residential cleaning services typically offer a range of cleaning tasks to ensure that a home is clean, tidy, and comfortable for its occupants. The specific services offered can vary from one cleaning company to another, but here are some common types of services you can expect from a residential cleaning service:",
             list:["Regular Cleaning", "Deep Cleaning", "Move-In/Move-out", "Specialized Cleaning","Green Cleaning","Customized Cleanings","One-Time Cleaning"]
+                },
+                commercial: {
+                  image:`${commercial}`,
+                  title: "Commercial Services",
+                  description: "Commercial cleaning services offer a wide range of services tailored to the cleaning and maintenance needs of businesses, organizations, and commercial properties. These services are designed to maintain a clean, healthy, and professional working environment.",
+                  list:["Office Cleaning","Customized Cleaning Plans","Commercial Floor Cleaning","Window Cleaning","Janitorial Services","Post-Contructions Cleaning","Emergency Cleanup"
+                  ]
+                },
+                specialtyServices:{
+                  image:`${special}`,
+                  title:"Specialty Services",
+                  description:"Specialty cleaning services in the cleaning industry refer to specialized and often more complex cleaning tasks that go beyond regular or standard cleaning services. These services require specific expertise, equipment, and techniques to address unique and challenging cleaning situations.",
+                  list: ["Restaurant and Kitchen Cleaning", "Industrial Cleaning", "Data Center Cleaning"]
                 }
         }
 ,
     fr:{
         residential:{
+          image:`${bucket}`,
+          title:"Rervices Résidentiels",
         description: "Les services de nettoyage résidentiel proposent généralement une gamme de tâches de nettoyage pour garantir qu'une maison est propre, bien rangée et confortable pour ses occupants. Les services spécifiques proposés peuvent varier d'une entreprise de nettoyage à l'autre, mais voici quelques types de services courants que vous pouvez attendre d'un service de nettoyage résidentiel:",
         list : ["Nettoyage régulier", "Nettoyage en profondeur", "Emménagement/Déménagement", "Nettoyage spécialisé", "Nettoyage écologique", "Nettoyages personnalisés", "Nettoyage unique"]
 
+        },
+        commercial:{
+          image:`${commercial}`,
+          title:"Services Commerciaux",
+          description:"Les services de nettoyage commercial offrent une large gamme de services adaptés aux besoins de nettoyage et d’entretien des entreprises, des organisations et des propriétés commerciales. Ces services sont conçus pour maintenir un environnement de travail propre, sain et professionnel.",
+        list:["Nettoyage de bureaux","Plans de nettoyage personnalisés","Nettoyage de sols commerciaux","Le nettoyage des vitres","Services de conciergerie","Nettoyage post-construction","Nettoyage d'urgence"]
+        },
+        specialtyServices:{
+          image:`${special}`,
+          title:"Services spécialisés",
+          description:"Les services de nettoyage spécialisés dans l'industrie du nettoyage font référence à des tâches de nettoyage spécialisées et souvent plus complexes qui vont au-delà des services de nettoyage réguliers ou standards. Ces services nécessitent une expertise spécifique, des équipements et des techniques pour faire face à des situations de nettoyage uniques et difficiles.",
+          list: ["Nettoyage de restaurants et de cuisines", "Nettoyage industriel", "Nettoyage de centres de données"]
         }
     }
 }
+
+const servicesObj = serviceDescription[language]
+console.log(servicesObj)
     return (
         <div>
         <BannerDiv>
@@ -54,21 +85,26 @@ const description = {
 </BannerDiv>
         <Wrapper>
 
-<HoverWrapper>
+
+        {Object.keys(servicesObj).map((serviceKey => {
+        const service = serviceDescription[language][serviceKey];
+        return (
+          <>
+          <HoverWrapper>
 <Section>
 
-    <Image src={bucket} alt="" />
+    <Image src={service.image} alt="" />
     <TextWrapper>
-    <H1>{serviceContent[`${language}`].title1}</H1>
+    <H1>{service.title}</H1>
     <InfoWrapper>
 
 
 
 
-    <P>{description[`${language}`].residential.description}</P>
+    <P>{service.description}</P>
 <div>
     <Ul>
-        {description[`${language}`].residential.list.map((item, index)=>(
+        {service.list.map((item, index)=>(
 
 <ListItem key={index}>{item}</ListItem>
         ))}
@@ -76,63 +112,15 @@ const description = {
 </div>
     </InfoWrapper>
     </TextWrapper>
-  
+
 
    </Section>
    </HoverWrapper>
-   <HoverWrapper>
-   <Section>
+    
+          </>
+          )
+      }))}
 
-   <Image src={commercial} alt="" />
-   <TextWrapper>
-   <H1>{serviceContent[`${language}`].title2}</H1>
-   <InfoWrapper>
-
-
-   <P>
-   Commercial cleaning services offer a wide range of services tailored to the cleaning and maintenance needs of businesses, organizations, and commercial properties. These services are designed to maintain a clean, healthy, and professional working environment. 
-   </P>
-<div>
-    <Ul>
-        <ListItem>Office Cleaning</ListItem>
-        <ListItem>Customized Cleaning Plans</ListItem>
-        <ListItem>Commercial Floor Cleaning</ListItem>
-        <ListItem>Window Cleaning</ListItem>
-        <ListItem>Janitorial Services</ListItem>
-        <ListItem>Post-Contructions Cleaning</ListItem>
-        <ListItem>Emergency Cleanup</ListItem>
-    </Ul>
-</div>
-
-   </InfoWrapper>
-   </TextWrapper>
-
-</Section>
-</HoverWrapper>
-<HoverWrapper>
-<Section>
-<Image src={special} alt="" />
-<TextWrapper>
-<H1>{serviceContent[`${language}`].title3}</H1>
-<InfoWrapper>
-
-
-  
-
-<P>
-Specialty cleaning services in the cleaning industry refer to specialized and often more complex cleaning tasks that go beyond regular or standard cleaning services. These services require specific expertise, equipment, and techniques to address unique and challenging cleaning situations. 
-</P>
-<div>
-    <Ul>
-        <ListItem> Restaurant and Kitchen Cleaning  </ListItem>
-        <ListItem> Industrial Cleaning </ListItem>
-    <ListItem>Data Center Cleaning</ListItem>
-    </Ul>
-</div>
-</InfoWrapper>
-</TextWrapper>
-</Section>
-</HoverWrapper>
         </Wrapper>
 <Footer/>
         </div>
@@ -143,6 +131,10 @@ Specialty cleaning services in the cleaning industry refer to specialized and of
 const Image = styled.img`
 height: 400px;
 border-radius: 10px;
+@media (max-width: 768px) {
+height: 300px;
+
+    }
 
 `
 const fadeIn = keyframes`
@@ -160,6 +152,7 @@ const delay = 0.2;
 const HoverWrapper = styled.div`
   position: relative;
   opacity: 0;
+  left: 17px;
   transform: translateY(20px); /* Adjust the initial position as needed */
   animation: ${fadeIn} 0.8s ease-in-out forwards; /* Adjust the duration as needed */
   
@@ -186,6 +179,13 @@ const HoverWrapper = styled.div`
   &:nth-child(3) {
     animation-delay: ${delay * 3}s;
   }
+
+  @media (max-width: 768px) {
+display: flex;
+flex-direction: column;
+align-items: center;
+left: 0px;
+    }
 `;
 
 const Section = styled.div`
@@ -195,7 +195,7 @@ flex-direction: row;
 justify-content: space-between;
 padding-left:50px;
 padding-right: 50px;
-margin-left: 20px;
+/* margin-left: 20px; */
 /* margin-right: 20px;
 background-color: white; */
 padding: 10px;
@@ -211,7 +211,11 @@ box-shadow: 0px 0px 13px 3px rgba(191,227,255,0.95); */
 ${HoverWrapper}:hover & {
     transform: scale(1.005);
   }
+  @media (max-width: 768px) {
+display: flex;
+flex-direction: column;
 
+    }
   
 `
 
@@ -220,7 +224,6 @@ display: flex;
 flex-direction: column;
 justify-content: space-around;
 height: 100%;
-padding: 30px;
 @media (max-width: 768px) {
 display: flex;
 flex-direction: column;
@@ -235,6 +238,9 @@ margin-top: 10px;
 text-decoration: underline;
 text-decoration-color: ${theme.primaryColor};
 margin-left: 20px;
+@media (max-width: 768px) {
+margin: 0px;
+    }
 `
 
 const InfoWrapper = styled.div`
@@ -265,6 +271,12 @@ display: flex;
 flex-direction: column;
 margin-left: 30px;
 justify-content: flex-start;
+@media (max-width: 768px) {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-left: 0px;
+    }
 
 `
 
@@ -289,17 +301,10 @@ font-size:70px;
 
 `
 
-// const PageDiv = styled.div`
- 
-//         background: rgba(0,0,0,.3);
-//         position: fixed;
-//         z-Index: 1;
-//         top: 0;
-//         right: 0;
-//         bottom: 0;
-//         left: 0;
-//         opacity: !isOpen ? "0" : "1",
-//         transition: "all .2s",
-//         visibility: !isOpen ? "hidden" : "visible",
-
-// `
+const Image2Text = styled.div`
+@media (max-width: 768px) {
+display: flex;
+flex-direction: column;
+align-items: center;
+    }
+`
