@@ -120,6 +120,7 @@ box-shadow: 0px 2px 15px 3px rgba(0,0,0,0.15);
 
 const TranslateBtn = styled.span`
   margin-right: 10px;
+  font-size: 25px;
   font-weight: ${({ language, targetLanguage }) => 
     language === targetLanguage ? 'bold' : 'normal'};
 `;

@@ -59,6 +59,7 @@ const BannerDiv = styled.div`
   position: absolute;
   top: 40px;
   height: 200px;
+ 
 `;
 
 const BannerText = styled.p`
@@ -110,7 +111,7 @@ const Image = styled.img`
     animation: ${fadeIn} 0.8s ease-in-out forwards;
     animation-delay: ${delay * 1}s;
     height: 225px;
-    margin-top: 10px;
+    margin-top: 50px;
   }
 `;
 

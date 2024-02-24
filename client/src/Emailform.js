@@ -118,6 +118,11 @@ const Formwrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 768px) {
+margin-bottom: 30px;
+    
+  }
+
 `;
 
 const ParagraphDiv = styled.div `
