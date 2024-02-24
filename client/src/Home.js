@@ -58,7 +58,7 @@ position: relative;
   background-repeat: no-repeat;
   top: -10px;
   background-position: center top; 
-    height: 500px ;
+    height: 700px ;
     width: 100vw;
  }/* Remove the maximum height constraint */
   
