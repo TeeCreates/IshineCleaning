@@ -54,7 +54,8 @@ const Banner = styled.div`
   
   @media (max-width: 768px) {
 
-    height: 250px;
+    height: auto; /* Allow the image to resize proportionally */
+    max-height: none; 
   
 }
 `;
