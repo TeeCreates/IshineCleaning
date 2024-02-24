@@ -172,9 +172,9 @@ const SendButton = styled.button `
   border: none;
   text-align: center;
   width: 340px;
-  height: 40px;
+  height: 41px;
   position: relative;
-  left: 13px;
+  left: 11px;
   border-radius: 10px;
   cursor: pointer;
     /* Transition for smooth animation */
