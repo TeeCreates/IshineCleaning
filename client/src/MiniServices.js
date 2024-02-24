@@ -71,7 +71,7 @@ console.log(description[language],"test");
 
 {description[language].residential.description}
 </P>
-<StyledNavLink to="/Services" exact activeClassName="active" style={LinkStyle}>
+<StyledNavLink to="/Services" exact   onClick={() => window.scrollTo(0, 0)} activeClassName="active" style={LinkStyle}>
               {miniText[language].readMore}
               </StyledNavLink>
 </ServiceInfoDiv>
@@ -80,14 +80,14 @@ console.log(description[language],"test");
     <P>
    {description[language].commercial.description}
     </P>
-    <StyledNavLink to="/Services" exact activeClassName="active" style={LinkStyle}>
+    <StyledNavLink to="/Services" exact   onClick={() => window.scrollTo(0, 0)} activeClassName="active" style={LinkStyle}>
     {miniText[language].readMore}
               </StyledNavLink>
 </ServiceInfoDiv>
 <ServiceInfoDiv>
 <H2>   {miniText[language].title3} </H2>
 <P>{description[language].specialty.description} </P>
-<StyledNavLink to="/Services" exact activeClassName="active" style={LinkStyle}>
+<StyledNavLink to="/Services" exact   onClick={() => window.scrollTo(0, 0)} activeClassName="active" style={LinkStyle}>
 {miniText[language].readMore}
               </StyledNavLink>
 </ServiceInfoDiv>
