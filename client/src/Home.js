@@ -126,7 +126,7 @@ cursor: pointer;
   @media (max-width: 600px) {
 position: relative;
 top:-10px;
-width: 150px;
+width: 170px;
 height: 40px;
   }
 `
