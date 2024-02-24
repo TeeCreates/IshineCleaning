@@ -104,10 +104,13 @@ const ContentWrapper = styled.div`
 
 const Image = styled.img`
   height: 500px;
-  animation: ${fadeIn} 0.8s ease-in-out forwards; /* Adjust the duration as needed */
-  animation-delay: ${delay * 1}s; /* Delay for the image */
+
+  /* Apply animation only for mobile view */
   @media (max-width: 768px) {
+    animation: ${fadeIn} 0.8s ease-in-out forwards;
+    animation-delay: ${delay * 1}s;
     height: 225px;
     margin-top: 10px;
   }
 `;
+
