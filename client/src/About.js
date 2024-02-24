@@ -89,6 +89,10 @@ const H2 = styled.h2`
  font-size: 40px;
  text-decoration-line: underline;
  text-decoration-color: ${theme.primaryColor};
+ @media (max-width: 970px) {
+width: 300px;
+
+}
 `
 
 const Paragraph = styled.p`

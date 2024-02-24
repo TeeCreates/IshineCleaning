@@ -16,7 +16,7 @@ const quoteBox = {
   }
 ,
 fr:{
-  title:"Votre désordre, notre mission",
+  title:"Votre Désordre, Notre Mission",
   quote:"Devis gratuit",
 }
 ,
@@ -49,16 +49,16 @@ position: relative;
   background-image: url(${banner});
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   height: 650px;
   width: 100%;
 
  @media (max-width: 600px) { 
+   height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center top; 
-    height: 700px ;
-    width: 100vw;
+  background-position: center top;   
+
  }/* Remove the maximum height constraint */
   
   /* Add any additional styles as needed */
@@ -87,12 +87,16 @@ justify-content: center;
 
 
    @media (max-width: 970px) {
+     position: absolute;
+
   display: flex;
 flex-direction: column;
 align-items: center;
 width: 260px;
    height: 180px;
-   
+top:230px;
+
+color: white;
 
 }
 
@@ -101,6 +105,9 @@ width: 260px;
 const H1 = styled.div`
  font-family: 'DM Serif Display', serif;
   font-size: 40px;
+  @media (max-width: 600px) {
+font-size: 30px;
+  }
 `
 
 const Button = styled.button`
@@ -118,8 +125,8 @@ cursor: pointer;
   }
   @media (max-width: 600px) {
 position: relative;
-top: -10px;
-   
-
-}
+top:-10px;
+width: 150px;
+height: 40px;
+  }
 `
