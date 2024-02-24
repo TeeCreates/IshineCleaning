@@ -45,6 +45,7 @@ fr:{
 export default Home
 
 const Banner = styled.div`
+position: relative;
   background-image: url(${banner});
   background-size: cover;
   background-position: center;
@@ -52,12 +53,15 @@ const Banner = styled.div`
   height: 650px;
   width: 100%;
 
-  @media (max-width: 768px) {
-
-    height: auto; /* Allow the image to resize proportionally */
-    max-height: none; /* Remove the maximum height constraint */
+ @media (max-width: 768px) { 
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -10px;
+  background-position: center top; 
+    height: 500px ;
+    width: 100vw;
+ }/* Remove the maximum height constraint */
   
-}
   /* Add any additional styles as needed */
 `;
 
