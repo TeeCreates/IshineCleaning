@@ -80,8 +80,7 @@ console.log(servicesObj)
     return (
         <div>
         <BannerDiv>
-<BannerText>Our Services
-    </BannerText>
+        <BannerText>{language === 'en' ? 'Our Services' : 'Nos Services'}</BannerText>
 </BannerDiv>
         <Wrapper>
 
@@ -298,6 +297,9 @@ background-size: cover;
 const BannerText = styled.p`
 color:white;
 font-size:70px;
+@media (max-width: 768px) {
+   font-size:50px;
+  }
 
 `
 

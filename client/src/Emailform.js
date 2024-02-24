@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import styled from "styled-components"
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { FiUser, FiMail, FiMessageSquare } from "react-icons/fi";
+import theme from "./styles/theme";
+import { useLanguage } from './LanguageContext'; // Import useLanguage hook
 
 const EmailForm = () => {
-
+  const { language } = useLanguage(); // Get the current language from the useLanguage hook
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [submitted, setSubmitted] = useState(false); // Track form submission status
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,79 +36,178 @@ const EmailForm = () => {
         setName('');
         setEmail('');
         setMessage('');
+        setSubmitted(true); // Set submitted state to true
       })
       .catch((error) => {
         console.error('Error sending email:', error);
       });
   }
 
+  // Render the thank you message if form is submitted
+  if (submitted) {
+    return <ThankYouMessage />;
+  }
+
+  // Define the text content based on the current language
+  const placeholderName = language === 'en' ? ' Name' : ' Nom';
+  const placeholderEmail = language === 'en' ? ' Email' : ' Courriel';
+  const placeholderMessage = language === 'en' ? ' Message' : ' Message';
+  const thankYouMessage = language === 'en' ? 'Thank you for your message!' : 'Merci pour votre message!';
+
   return (
     <Formwrapper onSubmit={handleSubmit} className='emFormwrapper'>
-      Contact Us
-<ParagraphDiv>
-  Please feel free to send a message if you have any </ParagraphDiv><ParagraphDiv>questions or concerns or to receive a free quote.
-</ParagraphDiv>
-      <Input
-        type="text"
-        placeholder="Name"
-        name="user_name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <Input
-        type="text"
-        name="user_email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <TextAreaWrapper
-        cols="30"
-        rows="10"
-        placeholder='Message'
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      >
-      </TextAreaWrapper>
-      <SendButton type="submit">Send Email</SendButton>
+      <H1>{language === 'en' ? 'Contact Us' : 'Contactez-nous'}</H1>
+      <ParagraphDiv>
+        {language === 'en' ? 'Please feel free to send a message if you have any questions or concerns or to receive a free quote.' : 'N\'hésitez pas à envoyer un message si vous avez des questions ou des préoccupations ou pour recevoir un devis gratuit.'}
+      </ParagraphDiv>
+      <InputDiv>
+        <FiUser/>
+        <Input
+          type="text"
+          placeholder={placeholderName}
+          name="user_name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+      </InputDiv>
+      <InputDiv>
+        <FiMail/>
+        <Input
+          type="email"
+          placeholder={placeholderEmail}
+          name="user_email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </InputDiv>
+      <InputDiv>
+        <FiMessageSquare />
+        <TextAreaWrapper
+          cols="30"
+          rows="10"
+          placeholder={placeholderMessage}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+        />
+      </InputDiv>
+      <SendButton type="submit">{language === 'en' ? 'Send' : 'Envoyer'}</SendButton>
     </Formwrapper>
-  )
-}
+  );
+};
 
-export default EmailForm
+const ThankYouMessage = () => {
+  const { language } = useLanguage(); // Get the current language from the useLanguage hook
+  const thankYouMessage = language === 'en' ? 'Thank you for your message!' : 'Merci pour votre message!';
 
+  return (
+    <ThankYouWrapper>
+      <ThankYouText>{thankYouMessage}</ThankYouText>
+      <NavLinkStyled to="/">{language === 'en' ? 'Click here' : 'Cliquez ici'}</NavLinkStyled>
+    </ThankYouWrapper>
+  );
+};
+const NavLinkStyled = styled(NavLink)`
 
+  text-decoration: none;
+  color: #89cff0;
+`;
 const Formwrapper = styled.form`
-display: flex;
-flex-direction: column;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const ParagraphDiv = styled.div `
-width: 340px;
-display: flex;
-align-items: flex-start;
-`
+  width: 380px;
+  display: flex;
+  align-items: flex-start;
+`;
 
 const Input = styled.input `
-border: none;
-width: 340px;
-height: 50px;
-border-bottom: 2px solid #e6e6e6;
-`
+  border: none;
+  width: 340px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #EDF4FF;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+  @media (max-width: 768px) {
+width: 250px;
+    
+  }
+`;
+
+const InputDiv = styled.div `
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
 
 const TextAreaWrapper = styled.textarea`
-border: none;
-width: 340px;
-height: 55px;
-border-bottom: 2px solid #e6e6e6;
-resize: none;
-`
+  border: none;
+  width: 340px;
+  height: 100px;
+  resize: none;
+  border-radius: 10px;
+  background-color: #EDF4FF;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+  position: relative;
+  @media (max-width: 768px) {
+width: 250px;
+    
+  }
+`;
 
 const SendButton = styled.button `
-background-color: black;
-color: white;
-border: none;
-text-align: center;
-width: 340px;
-height: 40px;
-`
+  background-color: black;
+  color: white;
+  border: none;
+  text-align: center;
+  width: 340px;
+  height: 40px;
+  position: relative;
+  left: 13px;
+  border-radius: 10px;
+  cursor: pointer;
+    /* Transition for smooth animation */
+    transition: transform 0.2s;
+  
+  /* Styling for the button when it's clicked */
+  &:active {
+    transform: scale(0.95); /* Reduce the size by 5% */
+  }
+  @media (max-width: 768px) {
+width: 250px;
+    
+  }
+`;
+
+const H1 = styled.h1`
+  font-family: 'DM Serif Display', serif;
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+`;
+
+const ThankYouWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust height as needed */
+`;
+
+const ThankYouText = styled.p`
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: -100px;
+`;
+
+export default EmailForm;
