@@ -2,6 +2,7 @@
 // import './App.css';
 import * as React from "react"
 import Home from "./Home";
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 import {About} from "./About";
 import {Services} from "./Services";
@@ -37,6 +38,7 @@ function App() {
        <Contact/>
             </Route>
           </Switch>
+          <Footer />
       </div>
     </Router>
   );

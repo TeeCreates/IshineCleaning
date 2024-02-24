@@ -148,7 +148,7 @@ const NavLinks = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: ${({ showMenu }) => (showMenu ? "0" : "-100%")}; /* Hide off-screen by default */
     width: 100%;
     background-color: ${theme.primaryColor};
@@ -157,6 +157,7 @@ const NavLinks = styled.div`
     height: 100vh;
     justify-content: space-evenly;
     z-index: 999;
+
     
   }
 

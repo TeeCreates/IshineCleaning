@@ -121,7 +121,7 @@ console.log(servicesObj)
       }))}
 
         </Wrapper>
-<Footer/>
+
         </div>
     )
 }
@@ -226,6 +226,7 @@ height: 100%;
 @media (max-width: 768px) {
 display: flex;
 flex-direction: column;
+margin-bottom: 30px;
     }
 
 `

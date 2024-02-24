@@ -12,6 +12,7 @@ export const Contact = () => {
   
   return (
     <>
+    <ContactpageWrapper>
       <Wrapper>
         <BannerDiv>
           <BannerText>{bannerText}</BannerText>
@@ -21,11 +22,21 @@ export const Contact = () => {
           <EmailForm />
         </ContentWrapper>
       </Wrapper>
-      <Footer />
+
+      </ContactpageWrapper>
     </>
   );
 };
 
+const ContactpageWrapper =styled.div`
+display: flex;
+flex-direction: column;
+height: 100vh;
+@media (max-width: 400px) {
+height:auto;
+  }
+
+`
 const fadeIn = keyframes`
   from {
     opacity: 0;
@@ -45,10 +56,14 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100vh;
+  margin-bottom: 10px;
+  margin-top: 100px;
+  @media (max-width: 400px) {
+    margin-bottom: 100px;
+  }
 `;
 
-const BannerDiv = styled.div`
+const BannerDiv= styled.div`
   background-color: #89cff0;
   background-image: linear-gradient(135deg, #89cff0 0%, #babcda 100%);
   width: 100vw;
@@ -77,9 +92,14 @@ const ContentWrapper = styled.div`
   flex-direction: row;
   width: 100vw;
   justify-content: space-evenly;
-
+margin-top: 100px;
+margin-bottom: 100px;
   /* Animation only for phone view */
-  @media (max-width: 768px) {
+  @media (max-width: 414px) { /* Adjusted media query */
+  position: relative;
+  margin-top: 120px;
+  margin-bottom: 80px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,11 +127,11 @@ const Image = styled.img`
   height: 500px;
 
   /* Apply animation only for mobile view */
-  @media (max-width: 768px) {
+
+  @media (max-width: 700px) { /* Adjusted media query */
     animation: ${fadeIn} 0.8s ease-in-out forwards;
     animation-delay: ${delay * 1}s;
     height: 225px;
-    margin-top: 50px;
+
   }
 `;
-

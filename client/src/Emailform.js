@@ -118,11 +118,9 @@ const Formwrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (max-width: 768px) {
-margin-bottom: 30px;
-    
+  @media (max-width: 414px) {
+    margin-bottom: 70px;
   }
-
 `;
 
 const ParagraphDiv = styled.div `
@@ -141,9 +139,8 @@ const Input = styled.input `
   margin-top: 10px;
   margin-left: 10px;
   font-size: 20px;
-  @media (max-width: 768px) {
-width: 250px;
-    
+  @media (max-width: 414px) {
+    width: 250px;
   }
 `;
 
@@ -165,9 +162,8 @@ const TextAreaWrapper = styled.textarea`
   margin-left: 10px;
   font-size: 18px;
   position: relative;
-  @media (max-width: 768px) {
-width: 250px;
-    
+  @media (max-width: 414px) {
+    width: 250px;
   }
 `;
 
@@ -182,16 +178,14 @@ const SendButton = styled.button `
   left: 11px;
   border-radius: 10px;
   cursor: pointer;
-    /* Transition for smooth animation */
-    transition: transform 0.2s;
-  
+  /* Transition for smooth animation */
+  transition: transform 0.2s;
   /* Styling for the button when it's clicked */
   &:active {
     transform: scale(0.95); /* Reduce the size by 5% */
   }
-  @media (max-width: 768px) {
-width: 250px;
-    
+  @media (max-width: 414px) {
+    width: 250px;
   }
 `;
 
@@ -212,7 +206,6 @@ const ThankYouWrapper = styled.div`
 const ThankYouText = styled.p`
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: -100px;
-`;
+`
 
 export default EmailForm;

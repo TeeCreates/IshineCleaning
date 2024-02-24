@@ -35,7 +35,7 @@ const Home = () => {
       </Banner>
       <MiniServices />
       <About />
-      <Footer />
+
     </ParentContainer>
   );
 };

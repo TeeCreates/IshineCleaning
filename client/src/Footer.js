@@ -37,7 +37,7 @@ const FooterWrapper = styled.div`
   padding: 20px;
   display: flex;
   justify-content: space-evenly;
-  margin-top: 30px;
+  margin-top: 0px;
 `;
 
 const Linkk = styled.a`
