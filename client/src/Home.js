@@ -50,7 +50,6 @@ const Banner = styled.div`
   background-position: center;
   background-attachment: fixed;
   height: 650px;
-  width: 100%;
 
   
   /* Add any additional styles as needed */

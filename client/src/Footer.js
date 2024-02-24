@@ -1,27 +1,28 @@
-import { theme } from "./styles/theme";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <FooterWrapper>
-      <Ul> Social Media
+      <Ul>
+        Social Media
         <Li>
-          <Link href="your-instagram-url" target="_blank">
+          <Linkk href="https://www.instagram.com/ishine_mtl/" target="_blank">
             Instagram
-          </Link>
+          </Linkk>
         </Li>
         <Li>
-          <Link href="your-facebook-url" target="_blank">
+          <Linkk href="https://www.facebook.com/profile.php?id=100087243824796" target="_blank">
             Facebook
-          </Link>
+          </Linkk>
         </Li>
       </Ul>
       <Ul>
         Free Quote
         <Li>
-          <Link href="your-contact-url" target="_blank">
+          <StyleNavLink to="/contact">
             Contact Us
-          </Link>
+          </StyleNavLink>
         </Li>
       </Ul>
     </FooterWrapper>
@@ -37,16 +38,16 @@ const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
-
 `;
 
-const Link = styled.a`
-  font-size: 17px;
-  font-weight: 500;
+const Linkk = styled.a`
   color: white;
   text-decoration: none;
-
-
+  cursor: pointer;
+font-size: 15px;
+  &:hover {
+    color: #89cff0;
+  }
 `;
 
 const Ul = styled.div`
@@ -59,7 +60,14 @@ const Ul = styled.div`
 const Li = styled.li`
   list-style-type: none;
   margin-bottom: 8px;
-  :hover{
-      color:#34495e;
+`;
+
+const StyleNavLink = styled(NavLink)`
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 15px;
+  &:hover {
+    color: #89cff0;
   }
 `;
