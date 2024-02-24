@@ -50,14 +50,15 @@ const Banner = styled.div`
   background-position: center;
   background-attachment: fixed;
   height: 650px;
+  width: 100%;
 
-  
   @media (max-width: 768px) {
 
     height: auto; /* Allow the image to resize proportionally */
-    max-height: none; 
+    max-height: none; /* Remove the maximum height constraint */
   
 }
+  /* Add any additional styles as needed */
 `;
 
 const ParentContainer = styled.div`
