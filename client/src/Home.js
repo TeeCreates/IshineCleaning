@@ -53,10 +53,9 @@ position: relative;
   height: 650px;
   width: 100%;
 
- @media (max-width: 768px) { 
-  background-size: contain;
+ @media (max-width: 600px) { 
+  background-size: cover;
   background-repeat: no-repeat;
-  top: -10px;
   background-position: center top; 
     height: 700px ;
     width: 100vw;
@@ -93,6 +92,7 @@ flex-direction: column;
 align-items: center;
 width: 260px;
    height: 180px;
+   
 
 }
 
@@ -116,4 +116,10 @@ cursor: pointer;
     transform: scale(1.05);
     background-color: darken(${theme.primaryColor}, 10%); /* Darken the color on hover */
   }
+  @media (max-width: 600px) {
+position: relative;
+top: -10px;
+   
+
+}
 `
