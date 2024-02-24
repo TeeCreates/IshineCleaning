@@ -52,7 +52,11 @@ const Banner = styled.div`
   height: 650px;
 
   
-  /* Add any additional styles as needed */
+  @media (max-width: 768px) {
+
+    height: 250px;
+  
+}
 `;
 
 const ParentContainer = styled.div`
