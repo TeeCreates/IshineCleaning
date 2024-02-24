@@ -239,6 +239,7 @@ text-decoration-color: ${theme.primaryColor};
 margin-left: 20px;
 @media (max-width: 768px) {
 margin: 0px;
+font-size: 30px;
     }
 `
 
@@ -246,7 +247,13 @@ const InfoWrapper = styled.div`
 
 padding-left: 20px;
 padding-right: 20px;
-
+@media (max-width: 768px) {
+padding-left: 30px;
+padding-right: 30px;
+margin-top: 10px;
+position: relative;
+left: 5px;
+    }
 `
 
 

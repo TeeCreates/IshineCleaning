@@ -155,7 +155,7 @@ const NavLinks = styled.div`
     color: black;
     transition: left 0.3s ease-in-out;
     height: 100vh;
-    justify-content: space-around;
+    justify-content: space-evenly;
     z-index: 999;
     
   }
@@ -195,8 +195,9 @@ const HamburgerIcon = styled.div`
 `;
 
 const CloseIcon = styled.span`
-  font-size: 35px;
+  font-size: 45px;
   color: black;
   cursor: pointer;
   margin-right: 10px;
+
 `;
