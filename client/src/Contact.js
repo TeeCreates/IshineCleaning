@@ -32,6 +32,7 @@ const ContactpageWrapper =styled.div`
 display: flex;
 flex-direction: column;
 height: 100vh;
+margin-bottom: 100px;
 @media (max-width: 400px) {
 height:auto;
   }
