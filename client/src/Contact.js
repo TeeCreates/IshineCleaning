@@ -22,9 +22,9 @@ export const Contact = () => {
           <EmailForm />
         </ContentWrapper>
       </Wrapper>
-      
-      </ContactpageWrapper>
       <Footer/>
+      </ContactpageWrapper>
+ 
     </>
   );
 };
@@ -35,7 +35,7 @@ flex-direction: column;
 height: 100vh;
 margin-bottom: 90px;
 @media (max-width: 400px) {
-  padding: 10px;
+
 height:100vh;
   }
 
@@ -102,7 +102,7 @@ margin-bottom: 100px;
   position: relative;
   margin-top: 120px;
   margin-bottom: 80px;
-
+  padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
