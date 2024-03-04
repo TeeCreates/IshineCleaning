@@ -2,28 +2,25 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { FiInstagram } from "react-icons/fi";
 import { FaFacebookSquare } from "react-icons/fa";
-import footerlogo from "./Assets/footerlogo.png"
+import footerlogo from "./Assets/footerlogo.png";
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <Ul>
-    <LogoImage src={footerlogo} alt="" />
-
+        <LogoImage src={footerlogo} alt="" />
         <Li>
           <Linkk href="https://www.instagram.com/ishine_mtl/" target="_blank">
-          <FiInstagram />
+            <FiInstagram />
           </Linkk>
         </Li>
         <Li>
           <Linkk href="https://www.facebook.com/profile.php?id=100087243824796" target="_blank">
-          <FaFacebookSquare />
+            <FaFacebookSquare />
           </Linkk>
         </Li>
-
       </Ul>
       <Ul>
-      
         <Li>
           <StyleNavLink to="/contact">
             Contact Us
@@ -49,9 +46,15 @@ const Linkk = styled.a`
   color: white;
   text-decoration: none;
   cursor: pointer;
-font-size: 15px;
+  font-size: 15px;
   &:hover {
     color: #89cff0;
+  }
+  &:visited {
+    color: white;
+  }
+  &:active {
+    color: #89cff0; /* Change color when clicked */
   }
 `;
 
@@ -78,9 +81,14 @@ const StyleNavLink = styled(NavLink)`
   &:hover {
     color: #89cff0;
   }
+  &:visited {
+    color: white;
+  }
+  &:active {
+    color: #89cff0; /* Change color when clicked */
+  }
 `;
 
-
 const LogoImage = styled.img`
-height: 35px;
-`
+  height: 35px;
+`;
