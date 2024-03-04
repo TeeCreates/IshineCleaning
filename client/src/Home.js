@@ -44,7 +44,8 @@ const Banner = styled.div`
   position: relative;
   background-image: url(${banner});
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+    background-position: center top;
   background-attachment: scroll;
   height: 650px;
   width: 100%;
@@ -77,7 +78,7 @@ const QuoteDiv = styled.div`
   width: 500px;
   height: 200px;
 
-  @media (max-width: 970px) {
+  @media (max-width: 600px) {
     position: absolute;
     display: flex;
     flex-direction: column;
