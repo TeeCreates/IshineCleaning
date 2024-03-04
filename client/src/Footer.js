@@ -28,7 +28,7 @@ const Footer = () => {
         </Li>
         <div>
         <Li>
-          ishine.mtl@gmail.com
+          info@ishinemtl.ca
         </Li>
         <Li>
           (438) 270-6662
