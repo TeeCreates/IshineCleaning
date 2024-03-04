@@ -31,7 +31,7 @@ const Footer = () => {
           ishine.mtl@gmail.com
         </Li>
         <Li>
-          (438)270-6662
+          (438) 270-6662
         </Li>
         </div>
       </UlContact>
