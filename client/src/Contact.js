@@ -34,7 +34,7 @@ flex-direction: column;
 height: 100vh;
 margin-bottom: 90px;
 @media (max-width: 400px) {
-height:auto;
+height:100vh;
   }
 
 `
