@@ -105,7 +105,7 @@ const ThankYouMessage = () => {
   return (
     <ThankYouWrapper>
       <ThankYouText>{thankYouMessage}</ThankYouText>
-      <NavLinkStyled to="/">{language === 'en' ? 'Click here' : 'Cliquez ici'}</NavLinkStyled>
+      <NavLinkStyled to="/" onClick={() => window.scrollTo(0, 0)}>{language === 'en' ? 'Click here' : 'Cliquez ici'} </NavLinkStyled>
     </ThankYouWrapper>
   );
 };
@@ -201,6 +201,11 @@ const ThankYouWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 200px; /* Adjust height as needed */
+
+
+flex-direction: column;
+
+
 `;
 
 const ThankYouText = styled.p`

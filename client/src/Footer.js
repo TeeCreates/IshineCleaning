@@ -20,13 +20,21 @@ const Footer = () => {
           </Linkk>
         </Li>
       </Ul>
-      <Ul>
+      <UlContact>
         <Li>
           <StyleNavLink to="/contact">
             Contact Us
           </StyleNavLink>
         </Li>
-      </Ul>
+        <div>
+        <Li>
+          ishine.mtl@gmail.com
+        </Li>
+        <Li>
+          514-983-6661
+        </Li>
+        </div>
+      </UlContact>
     </FooterWrapper>
   );
 };
@@ -38,8 +46,13 @@ const FooterWrapper = styled.div`
   width: 100%;
   padding: 20px;
   display: flex;
-  justify-content: space-between;
   margin-top: 0px;
+flex-direction: column;
+align-items: flex-start;
+  @media (max-width: 600px) {
+  justify-content: space-between;
+  flex-direction: row;
+  }
 `;
 
 const Linkk = styled.a`
@@ -65,12 +78,21 @@ const Ul = styled.div`
   justify-content: center; /* Align items horizontally in the center */
   align-items: center; /* Align items vertically in the center */
 `;
+const UlContact = styled.div`
+  color: white;
+  font-size: 20px;
+  display: flex;
+flex-direction: column;
+/* Align items horizontally in the center */
+  align-items: flex-start; /* Align items vertically in the center */
+`;
 
 const Li = styled.li`
   list-style-type: none;
   position: relative;
   top: 5px;
   margin-left: 10px;
+  font-size: 12px;
 `;
 
 const StyleNavLink = styled(NavLink)`
