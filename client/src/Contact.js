@@ -22,8 +22,9 @@ export const Contact = () => {
           <EmailForm />
         </ContentWrapper>
       </Wrapper>
-
+      <Footer/>
       </ContactpageWrapper>
+    
     </>
   );
 };

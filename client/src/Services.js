@@ -121,7 +121,7 @@ console.log(servicesObj)
       }))}
 
         </Wrapper>
-
+        <Footer/>
         </div>
     )
 }
