@@ -153,6 +153,7 @@ const NavLinks = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     position: absolute;
+    padding: 30px;
     top: 45px;
     left: ${({ showMenu }) => (showMenu ? "0" : "-100%")}; /* Hide off-screen by default */
     width: 100%;
