@@ -42,7 +42,9 @@ const [serviceText, setServiceText] = useState('Services');
     <Wrapper>
       <LogoDiv>
         <Logo src={logo} alt="" />
+       <NavLink to="/"      style={LinkStyle}>
         <Name>I SHINE</Name>
+        </NavLink>
       </LogoDiv>
 
       {/* Render hamburger icon or "X" icon based on showMenu state */}
