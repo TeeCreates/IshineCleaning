@@ -153,13 +153,13 @@ const NavLinks = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     position: absolute;
-    top: 40px;
+    top: 45px;
     left: ${({ showMenu }) => (showMenu ? "0" : "-100%")}; /* Hide off-screen by default */
     width: 100%;
     background-color: ${theme.primaryColor};
     color: black;
     transition: left 0.3s ease-in-out;
-    height: 100vh;
+    height: 94vh;
     justify-content: space-evenly;
     z-index: 999;
 
