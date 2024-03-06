@@ -102,8 +102,9 @@ const H1 = styled.div`
 const Button = styled.button`
   font-size: 20px;
   margin-top: 20px;
-  height: 60px;
-  width: 100px;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
   background-color: ${theme.primaryColor};
   border: none;
   color: white;

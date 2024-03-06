@@ -46,11 +46,11 @@ console.log(aboutText, "testing")
 
 const Image = styled.img`
 
-height: 40%;
-width: 40%;
+height: 50%;
+width: 50%;
 
 
-@media (max-width: 970px) {
+@media (max-width: 700px) {
 height: 100%;
 width: 100%;
 
@@ -62,7 +62,7 @@ margin-top: 80px;
 display: flex;
 flex-direction: row;
 
-@media (max-width: 970px) {
+@media (max-width: 700px) {
   display: flex;
 flex-direction: column;
 align-items: center;

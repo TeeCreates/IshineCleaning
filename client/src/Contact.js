@@ -19,7 +19,11 @@ export const Contact = () => {
         </BannerDiv>
         <ContentWrapper>
           <Image src={message} alt="" />
-          <EmailForm />
+          <DivEmailForm>
+
+<EmailForm/>
+          </DivEmailForm>
+
         </ContentWrapper>
       </Wrapper>
       <Footer/>
@@ -77,6 +81,9 @@ const BannerDiv= styled.div`
   position: absolute;
   top: 40px;
   height: 200px;
+  @media (max-width: 768px) {
+    padding:20px;
+  }
  
 `;
 
@@ -98,10 +105,10 @@ const ContentWrapper = styled.div`
 margin-top: 100px;
 margin-bottom: 100px;
   /* Animation only for phone view */
-  @media (max-width: 414px) { /* Adjusted media query */
+  @media (max-width: 600px) { /* Adjusted media query */
   position: relative;
   margin-top: 120px;
-  margin-bottom: 80px;
+  margin-bottom: 90px;
   padding: 10px;
     display: flex;
     flex-direction: column;
@@ -134,7 +141,15 @@ const Image = styled.img`
   @media (max-width: 700px) { /* Adjusted media query */
     animation: ${fadeIn} 0.8s ease-in-out forwards;
     animation-delay: ${delay * 1}s;
-    height: 225px;
+    height: 300px;
+    position: relative;
+    bottom: 60px;
 
   }
 `;
+
+
+const DivEmailForm = styled.div`
+position: relative;
+bottom: 20px;
+`

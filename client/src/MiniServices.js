@@ -103,8 +103,9 @@ const Wrapper = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
+padding:20px;
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   display: flex;
 flex-direction: column;
 align-items: center;
@@ -114,6 +115,9 @@ align-items: center;
 const ServiceInfoDiv = styled.div`
 width: 320px;
 margin: 30px;
+@media (max-width: 700px) {
+  width: 70%;
+}
 `
 
 const StyledNavLink = styled(NavLink)`
