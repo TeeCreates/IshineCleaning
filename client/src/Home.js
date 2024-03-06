@@ -29,7 +29,7 @@ const Home = () => {
           <H1>{quoteBox[language].mess}</H1>
           <H1>{quoteBox[language].mission}</H1>
           <Link to="/contact">
-            <Button>{quoteBox[language].quote}</Button>
+            <Button onClick={() => window.scrollTo(0, 0)} >{quoteBox[language].quote}</Button>
           </Link>
         </QuoteDiv>
       </Banner>
